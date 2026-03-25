@@ -1,0 +1,92 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "bc3e519a-4efc-4482-a2c6-0258f6aab54a",
+        "name": "h2project"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "871a4dc3-88fe-4202-9aa2-f60ee14f1b93",
+            "name": "Service 1"
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n\t\"nombre\": \"Juan Manuel\",\n\t\"areaTrabajo\" :\"Contabilidad\",\n\t\"disponibilidad\": false  \n\t\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "GET http"
+              },
+              "host": "localhost:8080",
+              "path": "/tasks"
+            },
+            "id": "c3839bf2-6ef2-437f-83b9-b42c9ebe9c89",
+            "name": "PostTasks",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/tasks"
+            },
+            "id": "cc4a8259-83d7-4ae1-af67-aa59c5af8d1a",
+            "name": "getTasks",
+            "headers": []
+          }
+        }
+      ]
+    }
+  ]
+}
